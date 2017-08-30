@@ -1,0 +1,35 @@
+﻿@inherits UmbracoViewPage<TechTest.ViewModels.ContactViewModel>
+
+
+<div class="container">
+
+    @using (Html.BeginUmbracoForm("SubmitContact", "ContactSurface", null, new { id = "contact" }))
+    {
+        @Html.AntiForgeryToken();
+
+
+        <h3>Create Contact</h3>
+        <h4>Add a contact content node</h4>
+        <fieldset>
+            @Html.TextBoxFor(m => m.FirstName, new { placeholder = "first name", tabindex = "1", autofocus="" })
+            @Html.ValidationMessageFor(m=>m.FirstName)
+        </fieldset>
+        <fieldset>
+            @Html.TextBoxFor(m => m.LastName, new { placeholder = "last name", tabindex = "2" })
+            @Html.ValidationMessageFor(m => m.LastName)
+        </fieldset>
+        <fieldset>
+            @Html.TextBoxFor(m => m.EmailAddress, new { placeholder = "email address", tabindex = "3" })
+            @Html.ValidationMessageFor(m => m.EmailAddress)
+        </fieldset>
+        <fieldset>
+            @Html.TextBoxFor(m => m.TelephoneNumber, new { placeholder = "telephone number", tabindex = "4" })
+            @Html.ValidationMessageFor(m => m.TelephoneNumber)
+        </fieldset>
+        <fieldset>
+            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">SUBMIT</button>
+        </fieldset>
+
+    }
+
+</div>

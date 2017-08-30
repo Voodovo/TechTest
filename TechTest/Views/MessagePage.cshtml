@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.MessagePage>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
+
+<section class="section">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+                <p class="compat-msg" style="text-align:center;">
+                    @Umbraco.Field("messageText")
+                    <br /><br />
+                    <a href="@Umbraco.Field("whereNowUrl")" class="button button--border--solid">@Umbraco.Field("whereNowText")</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

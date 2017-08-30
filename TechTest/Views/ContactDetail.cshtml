@@ -1,0 +1,13 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "EmptyMaster.cshtml";
+}
+
+
+@section head
+{
+	<link href="~/css/contact-detail.css" rel="stylesheet" />
+}
+
+
+@{Html.RenderAction("RenderForm", "ContactSurface");}
